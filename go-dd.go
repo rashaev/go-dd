@@ -62,7 +62,10 @@ func dd(src, dst string, offset, limit int64 ) int64  {
 	defer destination.Close()
 
 	
-	nBytes, _ := io.CopyN(destination, source, limit)
+	nBytes, err:= io.CopyN(destination, source, limit)
+	if err != nil {
+		log.Fatal(err)
+	}
 	close(stopCh)
 	return nBytes
 	
