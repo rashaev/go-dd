@@ -22,7 +22,7 @@ func init() {
 	flag.Int64Var(&limit, "limit", 0, "sets how much copy data in bytes from the offset")
   }
   
-func dd(src, dst string, offset, limit int64 ) int64  {
+func Godd(src, dst string, offset, limit int64 ) int64  {
 	source, err := os.Open(src)
 	if  err != nil {
 		log.Fatal(err)
@@ -73,7 +73,7 @@ func dd(src, dst string, offset, limit int64 ) int64  {
  
 func main() {
 	flag.Parse()
-	go dd(src, dst, offset, limit)
+	go Godd(src, dst, offset, limit)
 
 	LOOP:
 	for {
