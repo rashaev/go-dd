@@ -9,9 +9,7 @@ format:
 	gofmt -w go-dd.go
 
 test: clean
-	go test -v -run="TestGoddWithoutOffsetLimit"
-	go test -v -run="TestGoddWithOffset"
-	go test -v -run="TestGoddWithLimit"
+	go test -v 
 
 clean:
 	@rm -f testdata/testfiledst
